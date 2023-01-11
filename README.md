@@ -24,7 +24,9 @@ Least Significant Bit insertion involves replacing the least significant bit of 
 
 this project makes use of `Aletheia`, an open source tool for steganography analysis.
 
-a variety of tools for data extraction & analysis are available in the `Aletheia` github repo: https://github.com/emmanueltsukerman/aletheia
+a variety of tools for data extraction & analysis are available in the `Aletheia` github repo: 
+
+* https://github.com/emmanueltsukerman/aletheia
 
 although `Aletheia` includes pre-built models, for this project i've chosen to build and train my own.
 
@@ -36,11 +38,15 @@ finally, due to the size of the datasets & processing contraints model training 
 
 data is split into 70% training and 30% testing data using the `train_test_split` module from `sklearn`.
 
-i chose to test two models, implemented with `sklearn`: 
+i chose to test two classifier models, implemented with `sklearn`: 
 
 * Random Forests: `sklearn.ensemble.RandomForestClassifier`
 
+    documentation here: https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html
+
 * Gaussian Naive Bayes: `sklearn.naive_bayes.GaussianNB`
+
+    documentation here: https://scikit-learn.org/stable/modules/generated/sklearn.naive_bayes.GaussianNB.html
 
 since steganography detection might be performed at scale, i defined a suite of functions to train, score, and report on classifier performance: 
 
@@ -49,3 +55,12 @@ since steganography detection might be performed at scale, i defined a suite of 
 * `score_clf` takes a list of fitted classifiers, retrieves & prints their scores
 
 * `fit_score_clfs` takes a list of instantiated classifiers, & calls `fit_clf` and `score_clf`, respectively.
+
+**function suite:**
+
+![image](https://user-images.githubusercontent.com/110150470/211708372-c12ab779-12ea-4168-bc00-4dea14b81e53.png)
+
+**example use:**
+
+![image](https://user-images.githubusercontent.com/110150470/211708288-5e25c5cf-810a-47eb-b03b-a60b62ec0773.png)
+
